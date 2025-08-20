@@ -1,0 +1,17 @@
+Name: shortener-api
+Host: 0.0.0.0
+Port: 8888
+ShortUrlDB:
+  DSN: "root:123456@tcp(localhost:3306)/db3?charset=utf8mb4&parseTime=true&loc=Local"
+
+Sequence:
+  DSN: "root:123456@tcp(localhost:3306)/db3?charset=utf8mb4&parseTime=true&loc=Local"
+
+BaseString: kP0rE7GqLmZj8dWF3tNs5iUxCvY4bKu9aQoHI6fB1yMhRg2DOeSzXjTN
+
+ShortUrlBlackList: ["Version", "fuck", "stupid", "convert", "api", "health", "css", "js"]
+
+ShortDomain: q1mi.cn
+
+CacheRedis:
+  - Host: 127.0.0.1:6379

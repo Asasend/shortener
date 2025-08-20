@@ -1,0 +1,31 @@
+/*
+短链接项目
+*/
+// 转换请求 - 将长链接转为短链接
+type ConvertRequest {
+	LongURL string `json:"longUrl" validate:"required"`
+}
+
+// 显示请求 - 通过短链接获取原始链接
+type ShowRequest {
+	ShortUrl string `path:"shortUrl" validate:"required"`
+}
+
+// 转换响应
+type ConvertResponse {
+	ShortUrl string `json:"shortUrl"`
+}
+
+// 显示响应
+type ShowResponse {
+	LongUrl string `json:"longUrl" `
+}
+
+service shortener-api {
+	@handler ConvertHandler
+	post /convert (ConvertRequest) returns (ConvertResponse)
+
+	@handler ShowHandler
+	get /:shortUrl (ShowRequest) returns (ShowResponse)
+}
+
